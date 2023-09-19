@@ -1,6 +1,11 @@
 <template>
     <div>
-        <h1></h1>
+        <div v-if="post">
+            <h1 data-testid="post-title">{{ post.title }}</h1>
+            <p data-testid="post-body">{{ post.body }}</p>
+        </div>
+        <p v-if="loading" data-testid="loader">Loading...</p>
+        <p v-if="error" data-testid="error-message">{{ error }}</p>
     </div>
 </template>
 
@@ -18,7 +23,7 @@ const fetchPost = async () => {
         post.value = data
     }
     catch {
-        error.value = err.message
+        error.value = error.message
     }
     finally {
         loading.value = false

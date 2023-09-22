@@ -20,7 +20,7 @@ describe('Post Card Component', () => {
 
     await flushPromises()
 
-    new
+    // new
     expect(wrapper.find('[data-testid="post-title"]').text()).toBe(mockPost.title)
 
     expect(wrapper.find('[data-testid="post-body"]').text()).toBe(mockPost.body)

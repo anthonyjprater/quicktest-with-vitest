@@ -22,8 +22,8 @@ const fetchPost = async () => {
         const { data } = await axios.get("https://jsonplaceholder.typicode.com/posts/1")
         post.value = data
     }
-    catch {
-        error.value = error.message
+    catch(err) {
+        error.value = err.message
     }
     finally {
         loading.value = false
